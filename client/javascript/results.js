@@ -1,3 +1,20 @@
+    // Retrieve the stored username from localStorage
+    const storedUserName = localStorage.getItem("userName");
+
+    // Select the navbar link for Sign In
+    const signInLink = document.querySelector('.navbar-link');
+    
+    // Update the link text based on user's login status
+    if (storedUserName) {
+        signInLink.textContent = storedUserName; // Display username
+        signInLink.href = "#"; // Make the link inactive since the user is already signed in
+    } else {
+        signInLink.textContent = "Sign In"; // Display "Sign In" when not signed in
+        signInLink.href = "./html/signin.html"; // Set the link to the Sign In page
+    }
+    
+    
+    
 const resultsContainer = document.getElementById('results');
 
 // Retrieve quiz data from local storage

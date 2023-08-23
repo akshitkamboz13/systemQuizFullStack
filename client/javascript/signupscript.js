@@ -1,3 +1,5 @@
+
+
     document.getElementById('signup-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('signup-name').value;
@@ -27,6 +29,7 @@
     xhr.onreadystatechange = () =>{
       if(xhr.status == 200 && xhr.readyState == 4){
         console.log(xhr.responseText);
+        localStorage.setItem("userName", responseData.name);
         document.location.href=`http://127.0.0.1:5500/client/index.html`;
       }
     }
